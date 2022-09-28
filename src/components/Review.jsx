@@ -1,6 +1,6 @@
 import React from "react";
 
-const Review = ({}) => {
+const Review = ({ review }) => {
   return <div>Review</div>;
 };
 
