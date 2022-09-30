@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/components/Review.css";
 
 const Review = ({ review }) => {
   return (
-    <div className="x">
-      <div className="y">
-        <h3>{review.title}</h3>
-        <h4>{review.author}</h4>
-        <p>{review.description}</p>
-      </div>
+    <div className="text-white bg-green-500 p-4 rounded-lg">
+      <h3>{review.title}</h3>
+      <h5>- {review.author}</h5>
+      <p>{review.description}</p>
     </div>
   );
 };

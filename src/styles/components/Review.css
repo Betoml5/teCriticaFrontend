@@ -1,45 +1,7 @@
-.blob {
-  width: var(--width);
-  height: var(--width);
-  background: #90a4ae;
-  transition: border-radius var(--transition-speed) linear;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-}
-.blob-2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.blob-2 .blob {
-  background: #b0bec5;
-}
-
-.x {
-  width: 250px;
-  height: 250px;
-
-  animation: x var(--x-speed) linear infinite alternate;
-}
-.x2 {
-  animation: x2 var(--x-speed) linear infinite alternate;
-}
-.y {
-  animation: y var(--y-speed) linear infinite alternate;
-}
-
-@keyframes x {
-  100% {
-    transform: translateX(calc(100vw - var(--width)));
-  }
-}
-@keyframes x2 {
-  100% {
-    transform: translateX(calc(-100vw + var(--width)));
-  }
-}
-
-@keyframes y {
-  100% {
-    transform: translateY(calc(100vh - var(--width)));
-  }
+.item {
+  padding: 20px;
+  background-color: #2a0944;
+  height: fit-content;
+  border-radius: 8px;
+  color: #fff;
 }
