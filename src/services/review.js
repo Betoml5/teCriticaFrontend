@@ -1,8 +1,10 @@
 import axios from "axios";
 
-export const createReview = async (review) => {
+const API = "http://localhost:1337/api/reviews";
+
+export const createReviewAPI = async (review) => {
   try {
-    const response = await axios.post("/api/reviews", { data: review });
+    const response = await axios.post(API, { data: review });
     return response.data;
   } catch (error) {
     return error;
@@ -11,7 +13,7 @@ export const createReview = async (review) => {
 
 export const findAllReviewsAPI = async () => {
   try {
-    const response = await axios.get("/api/reviews");
+    const response = await axios.get(API);
     return response.data;
   } catch (error) {
     return error;
@@ -20,7 +22,7 @@ export const findAllReviewsAPI = async () => {
 
 export const findOneReviewAPI = async (id) => {
   try {
-    const response = await axios.get(`/api/reviews/${id}`);
+    const response = await axios.get(`API/${id}`);
     return response.data;
   } catch (error) {
     return error;
@@ -29,7 +31,7 @@ export const findOneReviewAPI = async (id) => {
 
 export const updateReviewAPI = async (id, review) => {
   try {
-    const response = await axios.put(`/api/reviews/${id}`, { data: review });
+    const response = await axios.put(`API/${id}`, { data: review });
     return response.data;
   } catch (error) {
     return error;
@@ -38,7 +40,7 @@ export const updateReviewAPI = async (id, review) => {
 
 export const deleteReviewAPI = async (id) => {
   try {
-    const response = await axios.delete(`/api/reviews/${id}`);
+    const response = await axios.delete(`API/${id}`);
     return response.data;
   } catch (error) {
     return error;

@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "../styles/components/Review.css";
 
-const Review = ({ review, background }) => {
+const Review = ({ review: { attributes: review } }) => {
+  console.log(review);
   return (
-    <div className={`text-white bg-[#${background}]  p-4 rounded-lg shadow-lg`}>
+    <div className={`text-white bg-[#5C2E7E]  p-4 rounded-lg shadow-lg`}>
       <h3>{review.title}</h3>
-      <h5>- {review.author}</h5>
+      <h5>- {review.user}</h5>
       <p>{review.description}</p>
     </div>
   );
