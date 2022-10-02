@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { validateControlNumber } from "../utils/Validations";
 import { createReviewAPI } from "../services/review";
+import { useNavigate } from "react-router-dom";
 
 const CreateReview = () => {
   const [title, setTitle] = useState("");
@@ -16,10 +17,15 @@ const CreateReview = () => {
     success: false,
   });
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setState({ ...state, loading: true });
 
+    if (isAnonymous) {
+      setUser("Anónimo");
+    }
     if (
       title === "" ||
       user === "" ||
@@ -43,6 +49,7 @@ const CreateReview = () => {
 
       await createReviewAPI(review);
       setState({ ...state, loading: false, success: true });
+      navigate("/");
     } catch (error) {
       setState({ ...state, error: "Ocurrio un error en el servidor" });
       throw error;
@@ -91,10 +98,7 @@ const CreateReview = () => {
             name="anonymus"
             id="anonymus"
             className="p-2 mr-2 my-2"
-            onChange={(e) => {
-              setIsAnonymous(e.target.checked);
-              isAnonymous && setUser("Anonimo");
-            }}
+            onChange={(e) => setIsAnonymous(e.target.checked)}
           />
           <label htmlFor="anonymus" className="text-white">
             Marcar como anonimo

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:1337/api/reviews";
+const API = "http://192.168.1.78:1337/api/reviews";
 
 export const createReviewAPI = async (review) => {
   try {
@@ -22,7 +22,7 @@ export const findAllReviewsAPI = async () => {
 
 export const findOneReviewAPI = async (id) => {
   try {
-    const response = await axios.get(`API/${id}`);
+    const response = await axios.get(`${API}/${id}`);
     return response.data;
   } catch (error) {
     return error;
@@ -31,7 +31,7 @@ export const findOneReviewAPI = async (id) => {
 
 export const updateReviewAPI = async (id, review) => {
   try {
-    const response = await axios.put(`API/${id}`, { data: review });
+    const response = await axios.put(`${API}/${id}`, { data: review });
     return response.data;
   } catch (error) {
     return error;
@@ -40,7 +40,16 @@ export const updateReviewAPI = async (id, review) => {
 
 export const deleteReviewAPI = async (id) => {
   try {
-    const response = await axios.delete(`API/${id}`);
+    const response = await axios.delete(`${API}/${id}`);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const findSalesByColumnAPI = async () => {
+  try {
+    const response = await axios.get(`${API}/sales-by-column`);
     return response.data;
   } catch (error) {
     return error;
