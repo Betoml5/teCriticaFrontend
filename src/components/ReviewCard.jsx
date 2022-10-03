@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { findOneReviewAPI } from "../services/review";
 
+import LoaderIcon from "../assets/static/loader.png";
+
 const ReviewCard = () => {
-  const [review, setReview] = useState({});
+  const [review, setReview] = useState(null);
 
   const { id } = useParams();
 
@@ -21,6 +23,14 @@ const ReviewCard = () => {
   useEffect(() => {
     getReviewById();
   }, []);
+
+  if (!review) {
+    return (
+      <div className="flex w-full items-center justify-center mt-20">
+        <img src={LoaderIcon} alt="loader" className="w-10 h-10 animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="relative  -rotate-3 cursor-pointer bg-[#ffc] max-w-md mx-4 md:mx-auto mt-20 rounded-sm shadow-2xl hover:rotate-0 animate transition-all ">

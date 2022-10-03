@@ -30,11 +30,10 @@ const Reviews = () => {
   }, []);
 
   if (
-    !reviews.column1.length ||
-    !reviews.column2.length ||
-    !reviews.column3.length ||
-    !reviews.column4.length ||
-    !reviews.column5.length
+    !reviews.column1?.length &&
+    !reviews.column2?.length &&
+    !reviews.column3?.length &&
+    !reviews.column4?.length
   ) {
     return (
       <div className="text-white text-xl p-4">
@@ -58,7 +57,7 @@ const Reviews = () => {
         spaceBetween={5}
         slidesPerView={3}
       >
-        {reviews.column1.map((review) => (
+        {reviews?.column1?.map((review) => (
           <SwiperSlide>
             <Review review={review} />
           </SwiperSlide>
@@ -78,7 +77,7 @@ const Reviews = () => {
         spaceBetween={5}
         slidesPerView={3}
       >
-        {reviews.column2.map((review) => (
+        {reviews?.column2?.map((review) => (
           <SwiperSlide>
             <Review review={review} />
           </SwiperSlide>
@@ -98,7 +97,7 @@ const Reviews = () => {
         spaceBetween={5}
         slidesPerView={3}
       >
-        {reviews.column3.map((review) => (
+        {reviews?.column3?.map((review) => (
           <SwiperSlide>
             <Review review={review} />
           </SwiperSlide>
@@ -117,7 +116,7 @@ const Reviews = () => {
         spaceBetween={5}
         slidesPerView={3}
       >
-        {reviews.column4.map((review) => (
+        {reviews?.column4?.map((review) => (
           <SwiperSlide>
             <Review review={review} />
           </SwiperSlide>

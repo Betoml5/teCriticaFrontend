@@ -75,7 +75,7 @@ const CreateReview = () => {
         </label>
         <input
           type="text"
-          placeholder="Te amo padilla"
+          placeholder="Día arruinado"
           className="p-2 rounded-md"
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -85,7 +85,7 @@ const CreateReview = () => {
         <textarea
           rows={6}
           type="text"
-          placeholder="No saben lo mucho que amo a padilla en serio es mi amor platónico y me gustaría que me diera un beso en la boca  "
+          placeholder="Ayer me cai afuera de cafeteria y se me cayeron los tacos"
           className="p-2 rounded-md"
           onChange={(e) => setDescription(e.target.value)}
         />
