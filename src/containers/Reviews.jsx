@@ -33,8 +33,7 @@ const Reviews = () => {
     !reviews.column1.length ||
     !reviews.column2.length ||
     !reviews.column3.length ||
-    !reviews.column4.length ||
-    !reviews.column5.length
+    !reviews.column4.length
   ) {
     return (
       <div className="text-white text-xl p-4">
