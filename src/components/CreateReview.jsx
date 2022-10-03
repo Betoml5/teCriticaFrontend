@@ -32,12 +32,7 @@ const CreateReview = () => {
       return;
     }
 
-    if (
-      title === "" ||
-      user === "" ||
-      description === "" ||
-      validateControlNumber(controlNumber) === false
-    ) {
+    if (title === "" || user === "" || description === "") {
       setState({
         ...state,
         loading: false,

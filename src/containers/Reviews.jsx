@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 import "swiper/css";
 import { findSalesByColumnAPI } from "../services/review";
+import LoaderIcon from "../assets/static/loader.png";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState({
@@ -28,6 +29,19 @@ const Reviews = () => {
   useEffect(() => {
     getAllReviewsByColumn();
   }, []);
+
+  if (
+    reviews.column1?.length === 0 ||
+    reviews.column2?.length === 0 ||
+    reviews.column3?.length === 0 ||
+    reviews.column4?.length === 0
+  ) {
+    return (
+      <div className="flex w-full items-center justify-center mt-20">
+        <img src={LoaderIcon} alt="loader" className="w-10 h-10 animate-spin" />
+      </div>
+    );
+  }
 
   if (
     !reviews.column1?.length &&

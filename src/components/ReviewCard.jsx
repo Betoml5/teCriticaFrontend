@@ -33,7 +33,7 @@ const ReviewCard = () => {
   }
 
   return (
-    <div className="relative  -rotate-3 cursor-pointer bg-[#ffc] max-w-md mx-4 md:mx-auto mt-20 rounded-sm shadow-2xl hover:rotate-0 animate transition-all ">
+    <div className="relative shadow-[inset_0_-4px_6px_rgba(0,0,0,0.6)] -rotate-3 cursor-pointer bg-[#ffc] max-w-md mx-4 md:mx-auto mt-20 rounded-sm shadow-2xl hover:rotate-0 animate transition-all ">
       <h4 className="text-xl p-4 text-red-500 font-regular uppercase border border-b-red-500 ">
         {review.title}
       </h4>
