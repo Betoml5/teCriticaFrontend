@@ -6,7 +6,7 @@ import "../styles/containers/Layout.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className=" bg-[#222831]">
+    <div className="bg-[#222831]">
       <Header />
       {children}
     </div>

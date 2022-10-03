@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./containers/Layout";
 import Reviews from "./containers/Reviews";
 import CreateReview from "./components/CreateReview";
-import ReviewDetails from "./components/ReviewDetails";
+import ReviewCard from "./components/ReviewCard";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Reviews />} />
           <Route path="/create" element={<CreateReview />} />
-          <Route path=":id" element={<ReviewDetails />} />
+          <Route path=":id" element={<ReviewCard />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -23,14 +23,20 @@ const CreateReview = () => {
     e.preventDefault();
     setState({ ...state, loading: true });
 
-    if (isAnonymous) {
-      setUser("Anónimo");
+    if (!validateControlNumber(controlNumber)) {
+      setState({
+        loading: false,
+        error: "Verifica el número de control",
+        success: false,
+      });
+      return;
     }
+
     if (
       title === "" ||
       user === "" ||
       description === "" ||
-      !validateControlNumber(controlNumber)
+      validateControlNumber(controlNumber) === false
     ) {
       setState({
         ...state,
@@ -48,8 +54,10 @@ const CreateReview = () => {
       };
 
       await createReviewAPI(review);
-      setState({ ...state, loading: false, success: true });
-      navigate("/");
+      setState({ ...state, loading: false, success: true, error: null });
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
     } catch (error) {
       setState({ ...state, error: "Ocurrio un error en el servidor" });
       throw error;
@@ -98,7 +106,10 @@ const CreateReview = () => {
             name="anonymus"
             id="anonymus"
             className="p-2 mr-2 my-2"
-            onChange={(e) => setIsAnonymous(e.target.checked)}
+            onChange={(e) => {
+              setIsAnonymous(e.target.checked);
+              setUser("Anónimo");
+            }}
           />
           <label htmlFor="anonymus" className="text-white">
             Marcar como anonimo
@@ -124,18 +135,20 @@ const CreateReview = () => {
           onChange={(e) => setAnswer(e.target.value)}
         />
         {state.error && (
-          <p className="text-red-500 font-bold mt-2">Revisa los datos</p>
+          <p className="text-red-500 font-bold mt-2">{state.error}</p>
         )}
         {state.success && (
           <p className="text-green-500 font-bold mt-2">
             Nota creada correctamente
           </p>
         )}
-        <input
+        <button
+          disabled={state.loading}
           type="submit"
-          value="Enviar"
           className="bg-blue-400 p-4 rounded-md text-white uppercase font-semibold my-4 cursor-pointer hover:opacity-90"
-        />
+        >
+          {state.loading ? "Cargando..." : "Crear nota"}
+        </button>
 
         <p className="my-4 text-white text-xs">
           *El numero de control no se guardara, solo se utilizara para validar

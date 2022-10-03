@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://192.168.1.78:1337/api/reviews";
+const API = `${process.env.REACT_APP_API_URL}/reviews`;
 
 export const createReviewAPI = async (review) => {
   try {

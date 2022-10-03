@@ -12,7 +12,7 @@ const Header = () => {
           to="/create"
           className="flex items-center justify-center bg-blue-500 rounded-full w-6 h-6"
         >
-          <p className="p-2 ">+</p>
+          <img src="/add.png" alt="add" />
         </Link>
       </div>
       <img src="/logo.png" alt="logo" className=" w-14 " />
