@@ -1,6 +1,12 @@
 import axios from "axios";
 
-const API = `${process.env.REACT_APP_API_URL}/reviews`;
+let API;
+
+if (process.env.REACT_APP_PRODUCTION === "true") {
+  API = `${process.env.REACT_APP_API_URL}/reviews`;
+} else {
+  API = `${process.env.REACT_APP_API_DEV_URL}/reviews`;
+}
 
 export const createReviewAPI = async (review) => {
   try {
