@@ -1,10 +1,21 @@
 import React from "react";
-import "../styles/components/Header.css";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="header">
-      <h3>TECritica</h3>
-      <img src="/logo.png" alt="logo" />
+    <header className="bg-[#00ADB5] flex justify-between items-center text-white  p-4">
+      <div className="flex items-center ">
+        <Link to="/" className="font-bold mr-2">
+          TecNM Campus RC
+        </Link>
+        <Link
+          to="/create"
+          className="flex items-center justify-center bg-blue-500 rounded-full w-6 h-6"
+        >
+          <img src="/add.png" alt="add" />
+        </Link>
+      </div>
+      <img src="/logo.png" alt="logo" className=" w-14 " />
     </header>
   );
 };

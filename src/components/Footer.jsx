@@ -2,7 +2,11 @@ import React from "react";
 import "../styles/components/Footer.css";
 
 const Footer = () => {
-  return <footer className="footer">Footer</footer>;
+  return (
+    <footer className="bg-[#00ADB5] text-right text-white w-full p-4 bg-green-500 font-semibold sticky bottom-0">
+      Made By Betoml5💚
+    </footer>
+  );
 };
 
 export default Footer;
