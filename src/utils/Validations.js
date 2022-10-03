@@ -3,4 +3,4 @@ export function validateControlNumber(input) {
   return regex.test(input);
 }
 
-console.log(validateControlNumber("221I0278"));
+console.log(validateControlNumber("191G0278"));
