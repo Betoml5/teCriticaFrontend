@@ -7,6 +7,7 @@ export const createReviewAPI = async (review) => {
     const response = await axios.post(API, { data: review });
     return response.data;
   } catch (error) {
+    console.log(error);
     return error;
   }
 };
