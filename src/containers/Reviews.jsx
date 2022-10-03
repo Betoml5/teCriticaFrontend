@@ -29,18 +29,18 @@ const Reviews = () => {
     getAllReviewsByColumn();
   }, []);
 
-  // if (
-  //   !reviews.column1?.length &&
-  //   !reviews.column2?.length &&
-  //   !reviews.column3?.length &&
-  //   !reviews.column4?.length
-  // ) {
-  //   return (
-  //     <div className="text-white text-xl p-4">
-  //       No hay nada que mostrar por aqui...
-  //     </div>
-  //   );
-  // }
+  if (
+    !reviews.column1?.length &&
+    !reviews.column2?.length &&
+    !reviews.column3?.length &&
+    !reviews.column4?.length
+  ) {
+    return (
+      <div className="text-white text-xl p-4">
+        No hay nada que mostrar por aqui...
+      </div>
+    );
+  }
 
   return (
     <div className=" bg-[#222831] my-2">
