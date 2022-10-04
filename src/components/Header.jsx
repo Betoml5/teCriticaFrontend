@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="bg-[#FF5B00] flex justify-between items-center text-white  p-4">
       <div className="flex items-center ">
-        <Link to="/" className="font-bold mr-2 md:text-xl text-[#FFEE63]">
+        <Link to="/" className="font-bold mr-2 md:text-xl neonText">
           TecNM Campus RC
         </Link>
         <Link
