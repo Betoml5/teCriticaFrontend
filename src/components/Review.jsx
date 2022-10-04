@@ -5,7 +5,7 @@ import "../styles/components/Review.css";
 const Review = ({ review }) => {
   return (
     <div
-      className={`text-white min-h-[120px] max-h-[120px] bg-[#5C2E7E]  p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-80`}
+      className={`text-white min-h-[120px] max-h-[120px] bg-[#990000]  p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-80`}
     >
       <Link to={`/${review.id}`}>
         <h3 className="truncate font-semibold">{review.title}</h3>

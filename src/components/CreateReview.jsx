@@ -4,6 +4,8 @@ import { validateControlNumber } from "../utils/Validations";
 import { createReviewAPI } from "../services/review";
 import { useNavigate } from "react-router-dom";
 
+import { securityQuestions } from "../utils/security-questions";
+
 const CreateReview = () => {
   const [title, setTitle] = useState("");
   const [user, setUser] = useState("");
@@ -60,7 +62,7 @@ const CreateReview = () => {
   };
 
   return (
-    <div className="h-full">
+    <div>
       <form
         className="flex flex-col p-4 max-w-xl mx-auto"
         onSubmit={handleSubmit}
@@ -116,16 +118,26 @@ const CreateReview = () => {
         </label>
         <input
           type="text"
-          placeholder="221GXXXX"
+          placeholder="XXXXXXXX"
           className="p-2 rounded-md "
           onChange={(e) => setControlNumber(e.target.value)}
         />
-        <label htmlFor="securityQuestion" className="text-white my-2">
+        <label
+          htmlFor="securityQuestion"
+          className="text-white font-semibold mt-2"
+        >
           Pregunta de seguridad
         </label>
+        <p className="text-white mb-3">
+          {
+            securityQuestions[
+              Math.floor(Math.random() * securityQuestions.length)
+            ].question
+          }
+        </p>
         <input
           type="text"
-          placeholder="¿Cúal es el nombre del coordinador de carrera?"
+          placeholder="Jose"
           className="p-2 rounded-md"
           onChange={(e) => setAnswer(e.target.value)}
         />

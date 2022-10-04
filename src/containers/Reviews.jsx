@@ -57,7 +57,7 @@ const Reviews = () => {
   }
 
   return (
-    <div className=" bg-[#222831] my-2">
+    <div className=" bg-[#222831] my-2 ">
       <Swiper
         className="m-2"
         loop={true}
