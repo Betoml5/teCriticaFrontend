@@ -62,7 +62,7 @@ const CreateReview = () => {
   };
 
   return (
-    <div className="h-full">
+    <div>
       <form
         className="flex flex-col p-4 max-w-xl mx-auto"
         onSubmit={handleSubmit}
@@ -118,7 +118,7 @@ const CreateReview = () => {
         </label>
         <input
           type="text"
-          placeholder="XXX"
+          placeholder="XXXXXXXX"
           className="p-2 rounded-md "
           onChange={(e) => setControlNumber(e.target.value)}
         />
