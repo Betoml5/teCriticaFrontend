@@ -8,6 +8,8 @@ import "swiper/css";
 import { findSalesByColumnAPI } from "../services/review";
 import LoaderIcon from "../assets/static/loader.png";
 
+import SpiderIcon from "../assets/static/spider-insect.png";
+
 const Reviews = () => {
   const [reviews, setReviews] = useState({
     column1: [],
@@ -57,7 +59,11 @@ const Reviews = () => {
   }
 
   return (
-    <div className=" bg-[#222831] my-2">
+    <div className=" bg-[#222831] my-2 ">
+      <div className="spider w-10 h-10 absolute top-0 right-20 translate-x-1.5">
+        <div className="h-14 w-[0.1px] bg-white absolute -top-10 left-1/2"></div>
+        <img src={SpiderIcon} alt="spiderIcon" className="-rotate-12 " />
+      </div>
       <Swiper
         className="m-2"
         loop={true}
