@@ -36,9 +36,9 @@ export const findOneReviewAPI = async (id) => {
   }
 };
 
-export const updateReviewAPI = async (id, review) => {
+export const updateReviewAPI = async (id, changes) => {
   try {
-    const response = await axios.put(`${API}/${id}`, { data: review });
+    const response = await axios.put(`${API}/${id}`, { data: changes });
     return response.data;
   } catch (error) {
     return error;

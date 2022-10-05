@@ -1,13 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { findOneReviewAPI } from "../services/review";
+import { findOneReviewAPI, updateReviewAPI } from "../services/review";
 
 import LoaderIcon from "../assets/static/loader.png";
+import LikeIcon from "../assets/static/like.png";
+import NoLikeIcon from "../assets/static/nolike.png";
 
 const ReviewCard = () => {
   const [review, setReview] = useState(null);
-
   const { id } = useParams();
+  const isLike = JSON.parse(window.localStorage.getItem(`note-${id}`));
+
+  const handleLike = async () => {
+    if (isLike) {
+      window.localStorage.removeItem(`note-${id}`);
+    } else {
+      window.localStorage.setItem(
+        `note-${id}`,
+        JSON.stringify({
+          review,
+          id: id,
+        })
+      );
+
+      const response = await updateReviewAPI(id, { likes: review.likes + 1 });
+      console.log(response);
+    }
+  };
 
   const getReviewById = async () => {
     try {
@@ -22,7 +41,7 @@ const ReviewCard = () => {
 
   useEffect(() => {
     getReviewById();
-  }, []);
+  }, [handleLike]);
 
   if (!review) {
     return (
@@ -38,7 +57,24 @@ const ReviewCard = () => {
         {review.title}
       </h4>
       <p className="p-4 border border-b-red-500">{review.description}</p>
-      <p className="p-4 text-xs italic">{review.user}</p>
+      <div className="flex items-center justify-between p-4 ">
+        <p className="text-xs italic">{review.user}</p>
+        {isLike ? (
+          <img
+            src={LikeIcon}
+            alt="nolike"
+            className="w-5 h-5"
+            onClick={() => handleLike()}
+          />
+        ) : (
+          <img
+            src={NoLikeIcon}
+            alt="nolike"
+            className="w-5 h-5"
+            onClick={() => handleLike()}
+          />
+        )}
+      </div>
       <img
         className="absolute w-8 h-8 top-2 right-2 border-transparent drop-shadow-2xl "
         src="/thumb-tack.png"
