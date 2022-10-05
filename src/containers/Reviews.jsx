@@ -18,6 +18,7 @@ const Reviews = () => {
 
   const getAllReviewsByColumn = async () => {
     const response = await findSalesByColumnAPI();
+
     setReviews({
       column1: response.column1,
       column2: response.column2,
