@@ -4,7 +4,7 @@ import { validateControlNumber } from "../utils/Validations";
 import { createReviewAPI } from "../services/review";
 import { useNavigate } from "react-router-dom";
 
-import { securityQuestions } from "../utils/security-questions";
+// import { securityQuestions } from "../utils/security-questions";
 
 const CreateReview = () => {
   const [title, setTitle] = useState("");
@@ -12,7 +12,7 @@ const CreateReview = () => {
   const [description, setDescription] = useState("");
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [controlNumber, setControlNumber] = useState("");
-  const [answer, setAnswer] = useState("");
+  // const [answer, setAnswer] = useState("");
   const [state, setState] = useState({
     loading: false,
     error: null,
@@ -122,7 +122,7 @@ const CreateReview = () => {
           className="p-2 rounded-md "
           onChange={(e) => setControlNumber(e.target.value)}
         />
-        <label
+        {/* <label
           htmlFor="securityQuestion"
           className="text-white font-semibold mt-2"
         >
@@ -140,7 +140,7 @@ const CreateReview = () => {
           placeholder="Jose"
           className="p-2 rounded-md"
           onChange={(e) => setAnswer(e.target.value)}
-        />
+        /> */}
         {state.error && (
           <p className="text-red-500 font-bold mt-2">{state.error}</p>
         )}
