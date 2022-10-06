@@ -60,7 +60,7 @@ const Reviews = () => {
   return (
     <div className=" bg-[#222831] my-2 ">
       <Swiper
-        className="m-2"
+        className="my-5"
         loop={true}
         speed={1200}
         modules={[Autoplay, Pagination, Navigation]}
@@ -69,7 +69,7 @@ const Reviews = () => {
           delay: 1000,
           disableOnInteraction: false,
         }}
-        spaceBetween={5}
+        spaceBetween={10}
         slidesPerView={3}
       >
         {reviews?.column1?.map((review) => (
@@ -80,7 +80,7 @@ const Reviews = () => {
       </Swiper>
 
       <Swiper
-        className="m-2"
+        className="my-5"
         loop={true}
         speed={1200}
         modules={[Autoplay, Pagination, Navigation]}
@@ -89,7 +89,7 @@ const Reviews = () => {
           delay: 1500,
           disableOnInteraction: false,
         }}
-        spaceBetween={5}
+        spaceBetween={10}
         slidesPerView={3}
       >
         {reviews?.column2?.map((review) => (
@@ -100,7 +100,7 @@ const Reviews = () => {
       </Swiper>
 
       <Swiper
-        className="m-2"
+        className="my-5"
         loop={true}
         speed={2000}
         modules={[Autoplay, Pagination, Navigation]}
@@ -109,7 +109,7 @@ const Reviews = () => {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        spaceBetween={5}
+        spaceBetween={10}
         slidesPerView={3}
       >
         {reviews?.column3?.map((review) => (
@@ -119,7 +119,7 @@ const Reviews = () => {
         ))}
       </Swiper>
       <Swiper
-        className="m-2"
+        className="my-5"
         loop={true}
         speed={2000}
         modules={[Autoplay, Pagination, Navigation]}
@@ -128,7 +128,7 @@ const Reviews = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        spaceBetween={5}
+        spaceBetween={10}
         slidesPerView={3}
       >
         {reviews?.column4?.map((review) => (
